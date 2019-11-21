@@ -1,8 +1,9 @@
-# @summary A short summary of the purpose of this class
+# Installs, Configurem and Set up a virtual host for nginx
 #
-# A description of what this class does
+# @summary Installs and configures nginx
 #
 # @example
 #   include nginx
 class nginx {
+  contain nginx::install
 }
