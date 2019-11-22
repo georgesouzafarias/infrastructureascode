@@ -1,8 +1,13 @@
-# @summary A short summary of the purpose of this class
+# Manages the nginx.conf file 
 #
-# A description of what this class does
+#@summary Manages the nginx.conf file 
 #
 # @example
 #   include nginx::config
 class nginx::config {
+  file {'nginx_config':
+    path   => '/etc/nginx/nginx.conf',
+    source => 'puppet:///modules/nginx/deb-nginx.conf',
+    ensure => 'present',
+  }
 }
