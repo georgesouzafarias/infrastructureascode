@@ -9,5 +9,6 @@ class nginx::config {
     ensure => 'present',
     path   => '/etc/nginx/nginx.conf',
     source => 'puppet:///modules/nginx/deb-nginx.conf',
+    notify => 'Service[nginx_service]',
   }
 }
