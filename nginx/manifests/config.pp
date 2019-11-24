@@ -4,11 +4,14 @@
 #
 # @example
 #   include nginx::config
-class nginx::config {
+class nginx::config (
+  $config_path = $nginx::params::config_path,
+  $config_source = $nginx::params::config_source,
+) inherits nginx::params {
   file {'nginx_config':
     ensure => 'present',
-    path   => '/etc/nginx/nginx.conf',
-    source => 'puppet:///modules/nginx/deb-nginx.conf',
+    path   => $config_path,
+    source => $config_source,
     notify => 'Service[nginx_service]',
   }
 }
