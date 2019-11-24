@@ -8,7 +8,7 @@ class nginx::params {
   $package_name = 'nginx'
   $service_name = 'nginx'
 
-  case $::osfamilly{
+  case $::osfamilly {
     'RedHat': {
       $config_path = '/etc/nginx/nginx.conf'
       $config_source = 'puppet:///modules/nginx/rh-nginx.conf'
