@@ -8,9 +8,9 @@ class nginx::service (
   $service_name = $nginx::params::service_name,
   ) inherits nginx::params {
   service { 'nginx_service':
-    ensure     => 'running',
+    ensure     => $nginx::service_ensure,
     name       => $service_name,
-    enable     => true,
-    hasrestart => true,
+    enable     => $nginx::service_enable,
+    hasrestart => $nginx::service_hasrestart,
   }
 }

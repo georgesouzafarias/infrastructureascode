@@ -1,1 +1,6 @@
 ---
+nginx::package_ensure: 'present'
+nginx::config_ensure: 'present'
+nginx::service_ensure: 'running'
+nginx::service_enable: true
+nginx::service_hasrestart: true

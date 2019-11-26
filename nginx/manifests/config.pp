@@ -9,7 +9,7 @@ class nginx::config (
   $config_source = $nginx::params::config_source,
 ) inherits nginx::params {
   file { 'nginx_config':
-    ensure => 'present',
+    ensure => $nginx::config_ensure,
     path   => $config_path,
     source => $config_source,
     notify => 'Service[nginx_service]',
